@@ -1,0 +1,28 @@
+GIT
+  remote: git://github.com/infinitered/bluepotion.git
+  revision: 70007244adc1a0c03924cd015104b30ac9e79ac6
+  specs:
+    bluepotion (0.1.7)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    moran (0.6.5)
+      motion-gradle
+    motion-async (0.6)
+    motion-gradle (1.6.0)
+    newclear (1.3)
+      reset-sim
+    rake (10.4.2)
+    reset-sim (1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bluepotion!
+  moran
+  motion-async
+  motion-gradle
+  newclear
+  rake

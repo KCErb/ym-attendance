@@ -1,0 +1,60 @@
+buildscript {
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
+  dependencies {
+    
+  }
+}
+
+allprojects {
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+task generateDependencies(type: Copy) {
+  from sourceSets.main.runtimeClasspath
+  into 'dependencies/'
+}
+
+repositories {
+  
+    maven {
+      url "/Users/KC/.rubymotion-android/sdk/extras/android/m2repository/"
+    }
+  
+  
+    maven {
+      url "/Users/KC/.rubymotion-android/sdk/extras/google/m2repository/"
+    }
+  
+  
+}
+
+dependencies {
+  
+  
+    
+      compile group: 'com.fasterxml.jackson.core', version: '+', name: 'jackson-core'
+    
+  
+    
+      compile group: 'com.fasterxml.jackson.core', version: '+', name: 'jackson-annotations'
+    
+  
+    
+      compile group: 'com.fasterxml.jackson.core', version: '+', name: 'jackson-databind'
+    
+  
+    
+      compile group: 'com.mcxiaoke.volley', version: '1.0.10', name: 'library'
+    
+  
+}
