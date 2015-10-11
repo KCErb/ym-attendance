@@ -15,6 +15,7 @@ GEM
       reset-sim
     rake (10.4.2)
     reset-sim (1.0)
+    swiss_db (0.6.7)
 
 PLATFORMS
   ruby
@@ -26,3 +27,4 @@ DEPENDENCIES
   motion-gradle
   newclear
   rake
+  swiss_db

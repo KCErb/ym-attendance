@@ -4,11 +4,15 @@ class HomeScreen < PMListScreen
   title "YM Attendance"
 
   def table_data
-    young_men = %w(AJ Cameron Dallin Drake Griffin Isaac Jacob Jarom Lance Max
-                   Michael Nate Owen Riley Spencer Taylor)
+    mp 'in home_screen table_data'
+    # young_men = %w(AJ Cameron Dallin Drake Griffin Isaac Jacob Jarom Lance Max
+                  #  Michael Nate Owen Riley Spencer Taylor)
+    young_men = YoungMan.all.to_a
     cells = young_men.map do |young_man|
-      { title: young_man, action: :enter_number, arguments: { name: young_man } }
+      { title: young_man.name, action: :enter_number, arguments: { young_man: young_man } }
     end
+
+    cells << { title: 'Add', action: :create_young_man }
 
     [{
       title: "Young Men",
@@ -17,11 +21,21 @@ class HomeScreen < PMListScreen
   end
 
   def enter_number(args, position)
-    app.alert(title: "How many hours did you serve this week?", style: :input) do |choice, input_text|
+    app.alert(title: "How many hours did you serve this week?", style: :input) do |choice, number|
       if choice == 'OK'
-        mp "#{args[:name]} served for #{input_text} hours"
-      else
-        mp "Pressed Cancel"
+        young_man_id = args[:young_man].id
+        next_id = ServiceHour.all.to_a == [] ? 0 : ServiceHour.last.id + 1
+        ServiceHour.create( id: next_id, value: number.to_f, young_man_id: young_man_id, created_at: Time.now )
+      end
+    end
+  end
+
+  def create_young_man(args, position)
+    app.alert(title: "What's your name?", style: :input) do |choice, input_text|
+      if choice == 'OK'
+        next_id = YoungMan.all.to_a == [] ? 0 : YoungMan.last.id + 1
+        ym = YoungMan.create( id: next_id, name: input_text, created_at: Time.now )
+        update_table_data
       end
     end
   end

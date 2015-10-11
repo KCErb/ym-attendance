@@ -15,3 +15,5 @@ gem "moran"
 # asynchronous code blocks
 gem "motion-async"
 
+# Yay! A Database!
+gem 'swiss_db'
