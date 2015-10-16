@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "rake"
-gem "bluepotion", github: "infinitered/bluepotion"
+gem "bluepotion", path: '/Users/KC/Programming/bluepotion/'
 
 # Managing Java-based dependencies
 gem "motion-gradle"
@@ -16,4 +16,4 @@ gem "moran"
 gem "motion-async"
 
 # Yay! A Database!
-gem 'swiss_db'
+gem 'swiss_db', path: '/Users/KC/Programming/SwissDB/'

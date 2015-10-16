@@ -1,5 +1,5 @@
 class YoungMan < SwissModel
 
-  set_class_name "young_man"
+  set_class_name "YoungMan"
 
 end

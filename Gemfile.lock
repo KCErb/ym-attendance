@@ -1,6 +1,10 @@
-GIT
-  remote: git://github.com/infinitered/bluepotion.git
-  revision: 70007244adc1a0c03924cd015104b30ac9e79ac6
+PATH
+  remote: /Users/KC/Programming/SwissDB
+  specs:
+    swiss_db (0.6.8)
+
+PATH
+  remote: /Users/KC/Programming/bluepotion
   specs:
     bluepotion (0.1.7)
 
@@ -15,7 +19,6 @@ GEM
       reset-sim
     rake (10.4.2)
     reset-sim (1.0)
-    swiss_db (0.6.7)
 
 PLATFORMS
   ruby
@@ -27,4 +30,4 @@ DEPENDENCIES
   motion-gradle
   newclear
   rake
-  swiss_db
+  swiss_db!
